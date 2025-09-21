@@ -13,7 +13,7 @@
     <body>
         <div class="container-fluid">
             <div class="row">
-                Name: <input type="text" id="nameInput" onkeyup="showHint"> <!-- add event -->
+                Name: <input type="text" id="nameInput" onkeyup="showHint()"> <!-- add event -->
             </div>
             <div class="row">
                 Suggestions:
@@ -29,8 +29,8 @@
                      params: { "query": document.getElementById("nameInput").value 
 
                      } })
-      .then(response => document.getElementById('suggestions').innerText = response.data)
-      .catch(error =>console.log(error));
+      .then(response => document.getElementById("suggestions").innerText = response.data)
+    .catch(error=> error.message)
   }
 
             
